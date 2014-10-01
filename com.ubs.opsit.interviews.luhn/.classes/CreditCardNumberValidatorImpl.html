@@ -1,0 +1,136 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: CreditCardNumberValidatorImpl</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.ubs.opsit.interviews.luhn</a> ]
+</div>
+
+<h1>Coverage Summary for Class: CreditCardNumberValidatorImpl (com.ubs.opsit.interviews.luhn)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreditCardNumberValidatorImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    77.8%
+  </span>
+  <span class="absValue">
+    (7/ 9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.ubs.opsit.interviews.luhn;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import java.util.regex.Matcher;
+<i>5</i>&nbsp;import java.util.regex.Pattern;
+<i>6</i>&nbsp;
+<b class="fc"><i>7</i>&nbsp;public class CreditCardNumberValidatorImpl implements CreditCardNumberValidator {</b>
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;	public boolean validate(String number) throws CreditCardNumberValidationException {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;
+<b class="fc"><i>12</i>&nbsp;        if(number == null || number.isEmpty())</b>
+<b class="nc"><i>13</i>&nbsp;            return true;</b>
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;        Pattern p = Pattern.compile(&quot;[^A-Za-z]-&quot;);</b>
+<b class="fc"><i>16</i>&nbsp;        Matcher m = p.matcher(number);</b>
+<b class="fc"><i>17</i>&nbsp;        boolean containsNoSpecialCharacter = m.find();</b>
+<b class="fc"><i>18</i>&nbsp;        if(containsNoSpecialCharacter)</b>
+<b class="nc"><i>19</i>&nbsp;            return false;</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;/*        int a = 0; // odd position of digits
+<i>23</i>&nbsp;        int b = 0; // even position of digits
+<i>24</i>&nbsp;        int x = 0; // check digit
+<i>25</i>&nbsp;        String invertedCardNumber = new StringBuffer(number).reverse().toString(); // holds the reversed credit card number to be checked
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;        for(int i = 0; i &lt; invertedCardNumber.length(); i++){
+<i>28</i>&nbsp;            int digit = Character.digit(invertedCardNumber.charAt(i), 10);
+<i>29</i>&nbsp;            // this takes the odd position numbers of the card number and sums them since the numbers remain the
+<i>30</i>&nbsp;            // same and not multiplied by 2.
+<i>31</i>&nbsp;            if(i % 2 == 0){
+<i>32</i>&nbsp;                a += digit;
+<i>33</i>&nbsp;            }
+<i>34</i>&nbsp;            // if numbers are not odd..drops in here and sums the even positioned numbers by 2.
+<i>35</i>&nbsp;            else{
+<i>36</i>&nbsp;                b += digit * 2;
+<i>37</i>&nbsp;                if(digit &gt;= 5){
+<i>38</i>&nbsp;                    b -= 9;
+<i>39</i>&nbsp;                }
+<i>40</i>&nbsp;            }
+<i>41</i>&nbsp;        }
+<i>42</i>&nbsp;        if((a + b) % 10 != 0){
+<i>43</i>&nbsp;            return false;
+<i>44</i>&nbsp;            //throw new CreditCardNumberValidationException(&quot;Invalid credit card number&quot;);
+<i>45</i>&nbsp;            //return false;
+<i>46</i>&nbsp;        }
+<i>47</i>&nbsp;        return true;
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;		//throw new UnsupportedOperationException();*/
+<i>50</i>&nbsp;
+<b class="fc"><i>51</i>&nbsp;        return true;</b>
+<i>52</i>&nbsp;	}
+<i>53</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2014-10-01 10:10</div>
+</div>
+</body>
+</html>
